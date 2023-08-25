@@ -64,4 +64,4 @@ You can run this framework for running on CIFAR10 dataset as below:
 
 
 ## Acknowledgements
-Thanks to the people behind Pytorch, Lightning, torchattacks hydra, and MLOps libraries whose work inspired this repository. Furthermore, I would like to thank my supervisors Prof. Mohammad Mehdi Homayounpour and Dr. Maryam Amirmazlagnani for their efforts and guidance.
+Thanks to the people behind Pytorch, Lightning, torchattacks, hydra, and MLOps libraries whose work inspired this repository. Furthermore, I would like to thank my supervisors Prof. Mohammad Mehdi Homayounpour and Dr. Maryam Amirmazlagnani for their efforts and guidance.
