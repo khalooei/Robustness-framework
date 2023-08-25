@@ -1,0 +1,27 @@
+defaults:  
+  - _self_  
+  - override hydra/hydra_logging: disabled  
+  - override hydra/job_logging: disabled  
+  
+hydra:  
+  output_subdir: null  
+  run:  
+    dir: .
+
+global_params:
+    dataset: 'CIFAR10'
+    # architecture:  'WideResNet'
+    architecture:  'ResNet'
+    devices: 1
+
+
+training_params:
+    epoch: 200
+    batch_size: 1024
+    # type: "AT"
+    type: "normal"
+
+
+adversarial_training_params:
+    eps: 0.03
+    name: "PGD"
