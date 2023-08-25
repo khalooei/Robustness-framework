@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img alt="Robustness Framework" src="Robustness-Framework.jpg" width="800px" style="max-width: 100%;">
+<img alt="Robustness Framework" src="img-robustness-framework.jpg" width="800px" style="max-width: 100%;">
 
 <br/>
 <br/>
