@@ -9,9 +9,9 @@
 
 **A robustness framework for baseline of standard and adversarial machine learning research projects**
 
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pytorch-lightning)](https://pypi.org/project/pytorch-lightning/)
-[![PyPI Status](https://badge.fury.io/py/pytorch-lightning.svg)](https://badge.fury.io/py/pytorch-lightning)
-[![Conda](https://img.shields.io/conda/v/conda-forge/lightning?label=conda&color=success)](https://anaconda.org/conda-forge/lightning)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/robustness-framework)](https://img.shields.io/pypi/pyversions/robustness-framework)
+[![PyPI Status](https://badge.fury.io/py/robustness-framework.svg)](https://badge.fury.io/py/robustness-framework)
+[![Conda](https://img.shields.io/conda/v/conda-forge/robustness-framework?label=conda&color=success)](https://anaconda.org/conda-forge/robustness-framework)
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)  
 
 </div>
