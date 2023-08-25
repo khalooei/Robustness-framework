@@ -42,15 +42,15 @@ To install this interesting framework for standard and adversarial machine learn
 For installing robustness framework, we have two approaches:
 
 ### 1- Manual installation
-'''
+```
 git clone https://github.com/khalooei/robustness-framework.git
 pip install -r requirements.txt
-'''
+```
 
 ### 2- Automatic installation
-'''
+```
 pip install robustness-framework
-'''
+```
 
 
 ## Usage
