@@ -65,3 +65,15 @@ You can run this framework for running on CIFAR10 dataset as below:
 
 ## Acknowledgements
 Thanks to the people behind Pytorch, Lightning, torchattacks, hydra, and MLOps libraries whose work inspired this repository. Furthermore, I would like to thank my supervisors Prof. Mohammad Mehdi Homayounpour and Dr. Maryam Amirmazlagnani for their efforts and guidance.
+
+
+## Citation
+If you use this package, please cite the following BibTex (SemanticScholar, [GoogleScholar](https://scholar.google.com/citations?user=2HFVUn4AAAAJ&hl=en)):
+```
+@article{mkhalooei2023robustnessframework,
+  title={Robustness Framework: A pytorch repository for baselines of standard and adversarial machine learning research projects},
+  author={Mohammad Khalooei and Mohammad Mehdi Homayounpour and Maryam Amirmazlaghani},
+  url = {https://github.com/khalooei/robustness-framework},
+  year={2023}
+}
+```
