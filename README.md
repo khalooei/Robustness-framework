@@ -41,12 +41,17 @@ The logging system of this framework is also customizable and resolves all your 
 To install this interesting framework for standard and adversarial machine learning, follow the steps below, and don't waste your time developing an efficient baseline.
 For installing robustness framework, we have two approaches:
 
-### 1- Automatic installation
- `pip install robustness-framework'
-
 ### 1- Manual installation
- `git clone ....`
- `pip install -r requirements.txt'
+'''
+git clone https://github.com/khalooei/robustness-framework.git
+pip install -r requirements.txt
+'''
+
+### 2- Automatic installation
+'''
+pip install robustness-framework
+'''
+
 
 ## Usage
 You can just follow the `main.py` file as a main anchor of this framework. You can define your own configurations in `configs` directory as we defined `training_mnist.yaml` and `training_cifar10.yaml` configuration. 
