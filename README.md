@@ -59,6 +59,11 @@ You can run this framework for running on CIFAR10 dataset as below:
  ```
    python main.py +configs=training_cifar10
  ```
+If you want to change the default `training_cifar10` configurations, you can pass them as below. Below is an example of adversarial training using a PGD attack.
+```
+   python main.py +config=training_cifar10 training_params.type="AT" adversarial_training_params.name="PGD"
+```
+
 
 [TOBE COMPLETED]
 
