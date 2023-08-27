@@ -69,11 +69,11 @@ If you want to change the default `training_cifar10` configurations, you can pas
 
 
 ## Acknowledgements
-Thanks to the people behind Pytorch, Lightning, torchattacks, hydra, and MLOps libraries whose work inspired this repository. Furthermore, I would like to thank my supervisors Prof. Mohammad Mehdi Homayounpour and Dr. Maryam Amirmazlagnani for their efforts and guidance.
+Thanks to the people behind Pytorch, Lightning, torchattacks, hydra, and MLOps libraries whose work inspired this repository. Furthermore, I would like to thank my supervisors [Prof. Mohammad Mehdi Homayounpour](https://scholar.google.com/citations?user=1PVbtE4AAAAJ&hl=en) and [Dr. Maryam Amirmazlagnani](https://scholar.google.com/citations?user=gxbTUfEAAAAJ&hl=en) for their efforts and guidance.
 
 
 ## Citation
-If you use this package, please cite the following BibTex (SemanticScholar, [GoogleScholar](https://scholar.google.com/citations?user=2HFVUn4AAAAJ&hl=en)):
+If you use this package, please cite the following BibTex ([SemanticScholar](https://www.semanticscholar.org/author/Mohammad-Khalooei/35915175), [GoogleScholar](https://scholar.google.com/citations?user=2HFVUn4AAAAJ&hl=en)):
 ```
 @article{mkhalooei2023robustnessframework,
   title={Robustness Framework: A pytorch repository for baselines of standard and adversarial machine learning research projects},
