@@ -15,12 +15,13 @@ def khalooei_app(cfg : DictConfig) -> None:
 
     model = PLModel(cfg)
 
-    s_dir_name = f"{cfg.global_params.dataset}-{cfg.global_params.architecture}-{cfg.training_params.type}_e{cfg.training_params.epoch}_"
+    s_dir_name = f"{cfg.global_params.dataset}-{cfg.global_params.architecture}-{cfg.training_params.type}_e{cfg.training_params.epoch}_note-{cfg.training_params.note}_"
     if cfg.training_params.type == "AT":
         s_dir_name+=f"{cfg.adversarial_training_params.name}_eps{cfg.adversarial_training_params.eps}"
 
     callbacks = [
         # save_top_k -> save the best model   >>>  best model is max in val_acc
+        LearningRateMonitor(logging_interval="step"), 
         ModelCheckpoint(save_top_k=2, mode="max", monitor="clean_val_acc"),  # saved best model based on Maximize the validation accuracy
         CustomTimeCallback(),
     ]
@@ -41,7 +42,7 @@ def khalooei_app(cfg : DictConfig) -> None:
                                 TensorBoardLogger(f'logs/{s_dir_name}/',version=s_experiment_starting_time),
                                 KhalooeiLoggingLogger(save_dir=f'logs/{s_dir_name}',version=s_experiment_starting_time),],
                         accelerator='gpu', #reproducibility,
-                        deterministic=True, #reproducibility,
+                        # deterministic=True, #reproducibility,
                         inference_mode=False,
                         # auto_lr_find = True # to find better lr
                         )
@@ -62,12 +63,16 @@ def khalooei_app(cfg : DictConfig) -> None:
     # test_acc = trainer.test(ckpt_path='best')  #dataloaders=test_loader
     # best model is a model with best ones 
 
-    print('-----VAL ACC----------')
-    val_acc = trainer.test(dataloaders=model.val_loader,ckpt_path='best')  #dataloaders=test_loader
-    print(val_acc)
-    print('-----Train ACC----------')
-    train_acc = trainer.test(dataloaders=model.train_loader,ckpt_path='best')  #dataloaders=test_loader
-    print(train_acc)
+    # print('-----VAL ACC----------')
+    # val_acc = trainer.test(dataloaders=model.val_loader,ckpt_path='best')  #dataloaders=test_loader
+    # print(val_acc)
+    # print('-----Train ACC----------')
+    # train_acc = trainer.test(dataloaders=model.train_loader,ckpt_path='best')  #dataloaders=test_loader
+    # print(train_acc)
+    print('-----TEST ACC----------')
+    model.test_dataloader()
+    test_acc = trainer.test(dataloaders=model.test_loader,ckpt_path='best')  #dataloaders=test_loader
+    print(test_acc)
     # every saved log is in lightning-Logs
 
 

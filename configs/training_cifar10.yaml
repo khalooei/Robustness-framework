@@ -12,14 +12,17 @@ global_params:
     dataset: 'CIFAR10'
     # architecture:  'WideResNet'
     architecture:  'ResNet'
-    devices: 1
+    devices: "auto"
 
 
 training_params:
-    epoch: 200
+    epoch: 100
     batch_size: 1024
-    # type: "AT"
-    type: "normal"
+    dataloader_workers: 32
+    type: "AT"
+    # type: "normal"
+    note: ""
+    lr: 0.05
 
 
 adversarial_training_params:
