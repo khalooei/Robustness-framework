@@ -1,4 +1,5 @@
 import torch
+import torchvision
 import torch.nn as nn
 import torch.nn.functional as F
 
@@ -78,6 +79,31 @@ class Bottleneck(nn.Module):
         out += self.shortcut(x)
         out = F.relu(out)
         return out
+
+
+class _ResNet18_benchmark(nn.Module):
+    def __init__(self, input_size=32, num_init_features=64,  num_classes=10):
+
+        super(_ResNet18_benchmark, self).__init__()
+        # Modify the pre-existing Resnet architecture from TorchVision. 
+        # The pre-existing architecture is based on ImageNet images (224x224) as input. 
+        # So we need to modify it for CIFAR10 images (32x32).
+        self.model = torchvision.models.resnet18(pretrained=False, num_classes=10)
+        self.model.conv1 = nn.Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+        self.model.maxpool = nn.Identity()
+        self.loss = nn.NLLLoss()
+
+    def forward(self, x):
+        out = self.model(x)
+        return F.log_softmax(out, dim=1)
+    
+
+def ResNet18_benchmark(**kwargs):
+    # Mohammad Khaloooei(MK) 's Toy Network (This template is used for all architectures)
+    # default values are for cifar10 #num_init_features=24, input_size=32, 
+    model = _ResNet18_benchmark(**kwargs)
+    return model
+
 
 
 class ResNet(nn.Module):

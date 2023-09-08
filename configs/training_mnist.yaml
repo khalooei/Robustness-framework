@@ -16,8 +16,11 @@ global_params:
 training_params:
     epoch: 100
     batch_size: 1024
+    dataloader_workers: 32
     # type: "AT"
     type: "normal"
+    note: ""
+    lr: 0.05
 
 adversarial_training_params:
     eps: 0.03

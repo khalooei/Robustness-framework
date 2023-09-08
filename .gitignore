@@ -59,3 +59,9 @@ venv
 dist
 data
 logs
+eval_logs*
+
+thirdpart*
+dev*
+*.ipynb
+test.py
