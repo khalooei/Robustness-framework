@@ -63,4 +63,5 @@ eval_logs*
 
 thirdpart*
 dev*
+*.ipynb
 test.py

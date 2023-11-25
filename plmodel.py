@@ -281,29 +281,29 @@ class PLModel(pl.LightningModule):
             test_acc = self.metric_acc(predicted_labels, true_labels)
             self.log(f'test_adv-{attack_name}-eps{eps}_accuracy',test_acc)
         
-        # if self.current_epoch >150:
-        attack_name = "MIFGSM"
-        for eps in [0.01,0.03, 0.1,0.2,0.3,0.5]:
-            # atk = PGD(self, eps=self.cfg.adversarial_training_params.eps, steps=10, random_start=True)
-            atk = MIFGSM(self, eps=eps, alpha=0.0392156862745098)
-            x, x_adv, y = self.prepare_adversarial_data(batch, atk)
-            logits = self(x_adv)
-            true_labels, predicted_labels = y,torch.argmax(logits, dim=1)
-            test_acc = self.metric_acc(predicted_labels, true_labels)
-            self.log(f'test_adv-{attack_name}-eps{eps}_accuracy',test_acc)
+        # # if self.current_epoch >150:
+        # attack_name = "MIFGSM"
+        # for eps in [0.01,0.03, 0.1,0.2,0.3,0.5]:
+        #     # atk = PGD(self, eps=self.cfg.adversarial_training_params.eps, steps=10, random_start=True)
+        #     atk = MIFGSM(self, eps=eps, alpha=0.0392156862745098)
+        #     x, x_adv, y = self.prepare_adversarial_data(batch, atk)
+        #     logits = self(x_adv)
+        #     true_labels, predicted_labels = y,torch.argmax(logits, dim=1)
+        #     test_acc = self.metric_acc(predicted_labels, true_labels)
+        #     self.log(f'test_adv-{attack_name}-eps{eps}_accuracy',test_acc)
         
-        attack_name = "APGD"
-        for eps in [0.03, 0.1,0.2,0.3,0.5]:
-            # atk = PGD(self, eps=self.cfg.adversarial_training_params.eps, steps=10, random_start=True)
-            # atk = APGD(self, eps=eps)
-            adversary = AutoAttack(self, norm='Linf', eps=eps, version='standard')
-            x_adv = adversary.run_standard_evaluation(x, y, bs=len(x))
+        # attack_name = "APGD"
+        # for eps in [0.03, 0.1,0.2,0.3,0.5]:
+        #     # atk = PGD(self, eps=self.cfg.adversarial_training_params.eps, steps=10, random_start=True)
+        #     # atk = APGD(self, eps=eps)
+        #     adversary = AutoAttack(self, norm='Linf', eps=eps, version='standard')
+        #     x_adv = adversary.run_standard_evaluation(x, y, bs=len(x))
 
-            # x, x_adv, y = self.prepare_adversarial_data(batch, atk)
-            logits = self(x_adv)
-            true_labels, predicted_labels = y,torch.argmax(logits, dim=1)
-            test_acc = self.metric_acc(predicted_labels, true_labels)
-            self.log(f'test_adv-{attack_name}-eps{eps}_accuracy',test_acc)
+        #     # x, x_adv, y = self.prepare_adversarial_data(batch, atk)
+        #     logits = self(x_adv)
+        #     true_labels, predicted_labels = y,torch.argmax(logits, dim=1)
+        #     test_acc = self.metric_acc(predicted_labels, true_labels)
+        #     self.log(f'test_adv-{attack_name}-eps{eps}_accuracy',test_acc)
             
 
     def adversarial_test_step(self, batch, batch_idx): # not executed during the training
